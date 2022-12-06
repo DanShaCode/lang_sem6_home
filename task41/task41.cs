@@ -63,3 +63,4 @@ int res0 = checkZero(userArr);
 
 Console.WriteLine();
 Console.Write("Количество элементов массива, которые больше нуля: " + res0);
+Console.WriteLine();
