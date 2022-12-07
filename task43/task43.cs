@@ -39,3 +39,41 @@
 // y1 = y2 - Да!
 
 // Значит прямые пересекаются в координатах (-0,5 ; -0,5)
+
+Console.WriteLine();
+Console.WriteLine("Введите значения переменных:");
+Console.WriteLine();
+Console.Write("Введите значение к1: ");
+int k1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите значение к2: ");
+int k2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите значение b1: ");
+int b1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите значение b2: ");
+int b2 = Convert.ToInt32(Console.ReadLine());
+
+if (k1 == k2 && b1 != b2) // Прямые парралельны
+{
+    Console.WriteLine();
+    Console.WriteLine("Ответ: прямые параллельны");
+}
+else
+{
+if (k1 == k2 && b1 == b2) // Прямые совпадают
+{
+    Console.WriteLine();
+    Console.WriteLine("Ответ: прямые совпадают");
+}
+else // Прямые пересекаются
+{
+double op1 = k1 - k2;
+double op2 = b2 - b1;
+double x = op2 / op1;
+
+double corX = k1 * x + 2;
+double corY = k2 * x + 4;
+
+Console.WriteLine();
+Console.WriteLine ($"Ответ: координаты пересекутся в точках {corX} и {corY}"); 
+}
+}
