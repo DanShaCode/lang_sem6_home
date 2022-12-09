@@ -66,14 +66,15 @@ if (k1 == k2 && b1 == b2) // Прямые совпадают
 }
 else // Прямые пересекаются
 {
+
 double op1 = k1 - k2;
 double op2 = b2 - b1;
 double x = op2 / op1;
 
-double corX = k1 * x + 2;
-double corY = k2 * x + 4;
+double corX = x;
+double corY = k2 * x + b2;
 
 Console.WriteLine();
-Console.WriteLine ($"Ответ: координаты пересекутся в точках {corX} и {corY}"); 
+Console.WriteLine ($"Ответ: прямые пересекутся в точках {corX} и {corY}"); 
 }
 }
