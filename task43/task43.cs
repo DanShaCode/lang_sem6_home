@@ -41,7 +41,15 @@
 // Значит прямые пересекаются в координатах (-0,5 ; -0,5)
 
 Console.WriteLine();
+Console.WriteLine("Данная программа найдёт точку пересечения двух прямых, заданных уравнениями:"); 
+
+Console.WriteLine();
+Console.WriteLine("y = k1 * x + b1");
+Console.WriteLine("y = k2 * x + b2");
+
+Console.WriteLine();
 Console.WriteLine("Введите значения переменных:");
+
 Console.WriteLine();
 Console.Write("Введите значение к1: ");
 int k1 = Convert.ToInt32(Console.ReadLine());
@@ -55,14 +63,14 @@ int b2 = Convert.ToInt32(Console.ReadLine());
 if (k1 == k2 && b1 != b2) // Прямые парралельны
 {
     Console.WriteLine();
-    Console.WriteLine("Ответ: прямые параллельны");
+    Console.WriteLine("Прямые не пересекаются (прямые параллельны).");
 }
 else
 {
 if (k1 == k2 && b1 == b2) // Прямые совпадают
 {
     Console.WriteLine();
-    Console.WriteLine("Ответ: прямые совпадают");
+    Console.WriteLine("Прямые совпадают (бесконечное множество точек пересечения).");
 }
 else // Прямые пересекаются
 {
@@ -75,6 +83,6 @@ double corX = x;
 double corY = k2 * x + b2;
 
 Console.WriteLine();
-Console.WriteLine ($"Ответ: прямые пересекутся в точках {corX} и {corY}"); 
+Console.WriteLine ($"Точка пересечения прямых имеет координаты ({corX}, {corY})"); 
 }
 }
