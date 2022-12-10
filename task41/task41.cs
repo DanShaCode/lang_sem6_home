@@ -2,13 +2,13 @@
 // Пользователь вводит числа из которых будет состоять массив
 // Посчитать сколько чисел больше 0 ввел пользователь
 
-
 void FillArray (int[] fill)
 {
     int length = fill.Length;
     int index = 0;
     Console.WriteLine();
     Console.WriteLine("Введите поочередно элементы массива");
+    Console.WriteLine();
     for (index = 0; index < fill.Length; index++)
     {
         Console.Write("Введите элемент: ");
@@ -20,13 +20,19 @@ void printArr (int[] print)
 {
     int len = print.Length;
     int i= 0;
-    string space = " ";
     Console.WriteLine();
     Console.Write("Сформированный массив: ");
     {
         for (i = 0; i < print.Length; i++)
         {
-            Console.Write(print[i] + space);
+            if (i == print.Length - 1)
+            {
+                Console.Write($"{print[i]}");
+            }
+            else
+            {
+                Console.Write($"{print[i]}, ");
+            }
         }
     }
 }
@@ -50,17 +56,30 @@ int checkZero (int[] zero)
     return count;
 }
 
-Console.Write("Введите размер массива: ");
+Console.WriteLine();
+Console.WriteLine("Данная программа позваляет создать массив и определить");
+Console.WriteLine("сколько чисел больше 0 ввел пользователь.");
+Console.WriteLine();
+
+Console.Write("Введите, пожалуйста, размер массива: ");
 int userData = Convert.ToInt32(Console.ReadLine());
 
-int[] userArr = new int[userData];
+if (userData < 0 | userData == 0)
+{
+    Console.WriteLine();
+    Console.WriteLine("Ошибка ввода. Параметры массива не могут быть меньше или равны нулю.");
+}
 
-FillArray(userArr);
-printArr(userArr);
-Console.WriteLine();
+else
+{
+    int[] userArr = new int[userData];
 
-int res0 = checkZero(userArr);
-
-Console.WriteLine();
-Console.Write("Количество элементов массива, которые больше нуля: " + res0);
-Console.WriteLine();
+    FillArray(userArr);
+    printArr(userArr);
+    Console.WriteLine();
+    
+    int res0 = checkZero(userArr);
+    Console.WriteLine();
+    Console.Write("Количество элементов массива больше нуля, которые ввел пользователь: " + res0);
+    Console.WriteLine();
+}
