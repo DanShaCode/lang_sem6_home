@@ -75,6 +75,8 @@ else
     int[] userArr = new int[userData];
 
     FillArray(userArr);
+    Console.WriteLine();
+    Console.WriteLine("Массив успешно создан!");
     printArr(userArr);
     Console.WriteLine();
     
@@ -83,3 +85,5 @@ else
     Console.Write("Количество элементов массива больше нуля, которые ввел пользователь: " + res0);
     Console.WriteLine();
 }
+
+// Протестировано. 12.12.2022 13:12 
